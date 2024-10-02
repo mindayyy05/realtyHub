@@ -4,6 +4,8 @@ use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\ListingController;
 use App\Http\Controllers\LikePropertyController;
 use App\Http\Controllers\TransactionController;
+use App\Http\Controllers\FeedbackController;
+use App\Models\Feedback;
 use App\Models\Transaction;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -18,7 +20,9 @@ Route::post('/signup', [AuthController::class, 'signUp']);
 Route::post('/login', [AuthController::class, 'LoginUser']);
 
 Route::post('/sell', [ListingController::class, 'sell']);
+Route::post('/feedback', [FeedbackController::class, 'feedback']);
 Route::post('/pay', [TransactionController::class, 'pay']);
+Route::get('/feedbacks', [FeedbackController::class, 'getFeedbacks']);
 
 Route::get('/listings', [ListingController::class, 'getListings']);
 Route::get('/rentlistings', [ListingController::class, 'getRentListings']);

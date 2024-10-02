@@ -14,7 +14,7 @@
                 <div class="flex justify-center space-x-8">
                     <div class="relative">
                         <a href="{{ route('properties.listed') }}"
-                            class="text-purple-600 bg-white py-2 px-4 rounded-lg transition duration-300 ease-in-out text-lg font-medium shadow-md">
+                            class="text-gray-800 hover:text-blue-500 transition duration-300 ease-in-out text-lg font-medium">
                             Listed Properties
                         </a>
                     </div>
@@ -23,7 +23,7 @@
                         Published Properties
                     </a>
                     <a href="{{ route('listings.pending') }}"
-                        class="text-gray-800 hover:text-blue-500 transition duration-300 ease-in-out text-lg font-medium">
+                        class="text-purple-600 bg-white py-2 px-4 rounded-lg transition duration-300 ease-in-out text-lg font-medium shadow-md">
                         Pending Properties
                     </a>
                 </div>

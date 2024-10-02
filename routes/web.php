@@ -8,6 +8,10 @@ use App\Http\Controllers\ListingController;
 use PhpParser\Builder\Property;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\FeedbackController;
+
+
+
 
 use App\Http\Controllers\Auth\AuthController;
 
@@ -57,3 +61,6 @@ Route::resource('users', AuthController::class);
 Route::put('/users/{id}', [AuthController::class, 'update'])->name('users.update');
 Route::delete('/listings/{id}', [ListingController::class, 'destroy'])->name('listings.destroy');
 Route::put('/listings/{id}', [ListingController::class, 'update'])->name('listings.update');
+
+Route::get('/feedback', [FeedbackController::class, 'index'])->name('feedback');
+Route::post('/feedback', [FeedbackController::class, 'store'])->name('feedback.store');

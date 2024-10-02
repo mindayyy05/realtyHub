@@ -111,29 +111,29 @@ class AuthController extends Controller
 
     public function LoginAdmin(Request $request)
     {
-        // Validate input
+       
         $request->validate([
             'email' => 'required|email',
             'password' => 'required|string',
         ]);
 
-        // Find the user by email
+      
         $user = User::where('email', $request->input('email'))->first();
 
         if ($user && Hash::check($request->input('password'), $user->password)) {
-            // Check if user is an admin (user_role = 0)
+           
             if ($user->user_role == 0) {
-                // Log the admin user in
+               
                 Auth::login($user);
-                return redirect()->route('dashboard'); // Redirect to dashboard.blade.php
+                return redirect()->route('dashboard'); 
             } else {
-                // Return error if not an admin
+                
                 return back()->withErrors([
                     'error' => 'Only admins can log in.',
                 ]);
             }
         } else {
-            // Return error for invalid credentials
+           
             return back()->withErrors([
                 'error' => 'Invalid email or password.',
             ]);
